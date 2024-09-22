@@ -44,8 +44,19 @@ $(document).ready(function(){
 
 
 
+  // ketika character > 150
+  // muncul hanya 150 & readmore button
+  // click read more =>show all text & show less button
+  // click show less=> hide text 150 & hide show less & show read more
 
 
+//   tiny mce editor
+
+tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
 })
 
 
