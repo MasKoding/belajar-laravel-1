@@ -42,21 +42,40 @@ $(document).ready(function(){
     })
 
 
+ // action like
+ // syntax utama $("selector").on("event",function(){
+// class pake symbol .
+// id pake symbol #
+// function anonymous tidak punya nama return nilai
+
+$(".btn-like-comment").click(function(){
+
+    // get total like
+    var totalLike = $(this).find(".total-like").text();
+    console.log("total like before:",totalLike)
+    totalLike = parseInt(totalLike.trim())+1;
+    // set total like
+    var totalLikeNumber = totalLike;
+    console.log("total like after:",totalLikeNumber)
+    $(".total-like").text(totalLikeNumber)
+
+    // ubah warna
+    // fungsi
+    $(this).find(".fa-heart").css("color","red")
 
 
-  // ketika character > 150
-  // muncul hanya 150 & readmore button
-  // click read more =>show all text & show less button
-  // click show less=> hide text 150 & hide show less & show read more
+ })
 
 
-//   tiny mce editor
+ // lakukan event on enter
+    $("#searchPost").on("keyup",function(e){
 
-tinymce.init({
-    selector: 'textarea',
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-  });
+        if(e.which === 13){
+            //Digniss
+            var searchValue = $(this).val();
+            window.location.href = "/blog/search/"+searchValue
+        }
+    })
 })
 
 
